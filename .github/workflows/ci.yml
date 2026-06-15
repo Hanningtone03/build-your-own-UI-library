@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check files exist
+        run: ls src/components/ src/styles/
+      - name: Validate HTML
+        run: cat demo/index.html | grep -c "ui-btn" && echo "Components referenced"
