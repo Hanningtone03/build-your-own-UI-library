@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Library — Demo</title>
+  <link rel="stylesheet" href="../src/styles/base.css">
+  <link rel="stylesheet" href="../src/styles/components.css">
+  <style>
+    body {
+      background: #0f172a;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+    }
+
+    .hero {
+      padding: 80px 40px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      font-size: 18px;
+      max-width: 500px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: #1e293b;
+      color: #60a5fa;
+      border: 1px solid #334155;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .demo-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .ui-btn {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .ui-card {
+      background: #0f172a;
+      border-color: #334155;
+      color: #f1f5f9;
+      max-width: 320px;
+    }
+
+    .ui-card__header {
+      border-color: #334155;
+      color: #f1f5f9;
+    }
+
+    .ui-card__footer {
+      background: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    .ui-card__body {
+      color: #94a3b8;
+    }
+
+    .ui-dropdown__menu {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .ui-dropdown__item {
+      color: #f1f5f9;
+    }
+
+    .ui-dropdown__item:hover {
+      background: #0f172a;
+    }
+
+    .ui-modal {
+      background: #1e293b;
+      color: #f1f5f9;
+    }
+
+    .ui-modal__header {
+      border-color: #334155;
+      color: #f1f5f9;
+    }
+
+    .ui-modal__body {
+      color: #94a3b8;
+    }
+
+    .ui-modal__footer {
+      border-color: #334155;
+      background: #0f172a;
+    }
+
+    .ui-modal__close {
+      color: #64748b;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .stat {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      color: #64748b;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #334155;
+      font-size: 13px;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="badge">Vanilla JS · No Dependencies</div>
+    <h1>UI Component Library</h1>
+    <p>A set of reusable UI components built from scratch — no frameworks, no libraries, just the web platform.</p>
+  </div>
+
+  <div class="content">
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Components</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Dependencies</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">~8kb</div>
+        <div class="stat-label">Total Size</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Component 01</div>
+      <div class="section-title">Buttons</div>
+      <div class="section-desc">Multiple variants, sizes, and states. Keyboard accessible and animated.</div>
+      <div class="demo-box">
+        <div class="row" id="buttons"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Component 02</div>
+      <div class="section-title">Cards</div>
+      <div class="section-desc">Composable card layout with optional header, body, and footer slots.</div>
+      <div class="demo-box">
+        <div class="row" id="cards"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Component 03</div>
+      <div class="section-title">Dropdown</div>
+      <div class="section-desc">Click-triggered menu with outside-click dismissal and item callbacks.</div>
+      <div class="demo-box">
+        <div class="row" id="dropdowns"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Component 04</div>
+      <div class="section-title">Modal</div>
+      <div class="section-desc">Accessible modal dialog with overlay, animations, and confirm/cancel actions.</div>
+      <div class="demo-box">
+        <div class="row" id="modals"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Component 05</div>
+      <div class="section-title">Toasts</div>
+      <div class="section-desc">Non-blocking notifications that slide in and auto-dismiss after 3 seconds.</div>
+      <div class="demo-box">
+        <div class="row" id="toasts"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Built by <a href="https://github.com/Hanningtone03" style="color: #60a5fa; text-decoration: none;">Hanningtone</a> — no frameworks, no dependencies
+  </footer>
+
+  <script type="module">
+    import { createButton } from "../src/components/button.js";
+    import { createCard } from "../src/components/card.js";
+    import { createModal } from "../src/components/modal.js";
+    import { createDropdown } from "../src/components/dropdown.js";
+    import { toast } from "../src/components/toast.js";
+
+    const buttons = document.getElementById("buttons");
+    buttons.appendChild(createButton({ label: "Primary", variant: "primary" }));
+    buttons.appendChild(createButton({ label: "Danger", variant: "danger" }));
+    buttons.appendChild(createButton({ label: "Neutral", variant: "neutral" }));
+    buttons.appendChild(createButton({ label: "Outline", variant: "outline" }));
+    buttons.appendChild(createButton({ label: "Small", variant: "primary", size: "sm" }));
+    buttons.appendChild(createButton({ label: "Large", variant: "primary", size: "lg" }));
+    buttons.appendChild(createButton({ label: "Disabled", variant: "primary", disabled: true }));
+
+    const cards = document.getElementById("cards");
+    cards.appendChild(createCard({
+      header: "Card Title",
+      body: "This is the card body. Any content goes here.",
+      footer: "Last updated just now"
+    }));
+
+    const dropdowns = document.getElementById("dropdowns");
+    dropdowns.appendChild(createDropdown({
+      trigger: "Actions",
+      items: [
+        { label: "Edit", onClick: () => toast("Edit clicked", "info") },
+        { label: "Duplicate", onClick: () => toast("Duplicated", "success") },
+        { label: "Delete", onClick: () => toast("Deleted", "danger") },
+      ]
+    }));
+
+    const modals = document.getElementById("modals");
+    const modal = createModal({
+      title: "Confirm Action",
+      content: "Are you sure you want to proceed with this action?",
+      onConfirm: () => toast("Confirmed", "success"),
+      onCancel: () => toast("Cancelled", "warning")
+    });
+    modals.appendChild(createButton({
+      label: "Open Modal",
+      variant: "primary",
+      onClick: () => modal.open()
+    }));
+
+    const toasts = document.getElementById("toasts");
+    toasts.appendChild(createButton({ label: "Success", variant: "neutral", size: "sm", onClick: () => toast("Operation successful", "success") }));
+    toasts.appendChild(createButton({ label: "Error", variant: "danger", size: "sm", onClick: () => toast("Something went wrong", "danger") }));
+    toasts.appendChild(createButton({ label: "Warning", variant: "neutral", size: "sm", onClick: () => toast("Proceed with caution", "warning") }));
+    toasts.appendChild(createButton({ label: "Info", variant: "outline", size: "sm", onClick: () => toast("Here is some info", "info") }));
+  </script>
+
+</body>
+</html>
